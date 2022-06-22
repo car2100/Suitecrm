@@ -1,0 +1,52 @@
+version: "3.8"
+services:
+  db:
+    image: mariadb:latest
+    container_name: suitecrm_db
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: "Teltec@@2022"
+      MARIADB_DATABASE: "suitecrm"
+      MARIADB_USER: "suitecrm"
+      MARIADB_PASSWORD: "Teltec@@2022"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      internal-db:
+        aliases:
+          - db
+    ports:
+      - 3306
+  suitecrm:
+    image: car21/suitecrm
+    container_name: suitecrm
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      SUITECRM_ADMIN: "admin"
+      SUITECRM_ADMIN_PASSWORD: "Teltec@@2022"
+      SUITECRM_DB_USER: "suitecrm"
+      SUITECRM_DB_USER_PASSWORD: "Teltec@@2022"
+      SUITECRM_DB_HOSTNAME: "db"
+      SUITECRM_DB_NAME: "suitecrm"
+      SUITECRM_URL: "suitecrm.com"
+      SUITECRM_DB_POPULATE: "yes"
+    volumes:
+      - suitecrm_upload:/var/www/html/public/legacy/upload
+      - suitecrm_install:/install
+
+    networks:
+      - external-frontend
+      - internal-db
+    depends_on:
+      - db
+
+networks:
+  internal-db:
+    internal: true
+  external-frontend:
+volumes:
+  db_data:
+  suitecrm_install:
+  suitecrm_upload:
