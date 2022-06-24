@@ -5,10 +5,10 @@ services:
     container_name: suitecrm_db
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: "Teltec@@2022"
+      MARIADB_ROOT_PASSWORD: "Admin@@2022"
       MARIADB_DATABASE: "suitecrm"
       MARIADB_USER: "suitecrm"
-      MARIADB_PASSWORD: "Teltec@@2022"
+      MARIADB_PASSWORD: "Admin@@2022"
     volumes:
       - db_data:/var/lib/mysql
     networks:
@@ -25,9 +25,9 @@ services:
       - 80:80
     environment:
       SUITECRM_ADMIN: "admin"
-      SUITECRM_ADMIN_PASSWORD: "Teltec@@2022"
+      SUITECRM_ADMIN_PASSWORD: "Admin@@2022"
       SUITECRM_DB_USER: "suitecrm"
-      SUITECRM_DB_USER_PASSWORD: "Teltec@@2022"
+      SUITECRM_DB_USER_PASSWORD: "Admin@@2022"
       SUITECRM_DB_HOSTNAME: "db"
       SUITECRM_DB_NAME: "suitecrm"
       SUITECRM_URL: "suitecrm.com"
