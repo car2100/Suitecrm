@@ -1,5 +1,5 @@
 # Suitecrm
-To use, you will download the docker-compose.yml and change the variables as you need, after that is just run the compose. \
+To use, you will download the docker-compose.yml and change the variables as you need, after that is just run the compose. 
 
 From the compose, you can change the informations to create a custom suitecrm installation. \
 environments: \
@@ -11,4 +11,4 @@ environments: \
       SUITECRM_DB_NAME = Database name \
       SUITECRM_URL = Suitecrm URL \
       SUITECRM_DB_POPULATE = Populate de Database (yes/no) \
-**Remember to change the mariadb variables too. \
+**Remember to change the mariadb variables too. 
