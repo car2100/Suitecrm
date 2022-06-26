@@ -1,5 +1,5 @@
 # Suitecrm
-To use, you will download the docker-compose.yml and change the variables as you need, after that is just run the compose. 
+To use it you will download the docker-compose.yml and change the variables as you need, after that is just run the compose. 
 
 From the compose, you can change the informations to create a custom suitecrm installation. \
 environments:
